@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+  <head>
+
+    <title>{{ aPage.strTitle }}</title>
+
+    <meta name="description" content="{{ aPage.strDescription }}">
+
+  </head>
+  <body>
+    <h1>Frases</h1>
+
+    <div>
+
+      {% for strPhrase in aPhrases %}
+
+        <div>
+          <span>{{ strPhrase }}</span>
+        </div>
+
+      {% endfor %}
+
+    </div>
+  </body>
+</html>

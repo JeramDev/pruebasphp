@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+  <head>
+
+    <title>{{ aPage.strTitle }}</title>
+
+    <meta name="description" content="{{ aPage.strDescription }}">
+
+  </head>
+  <body>
+    <h1>{{ aPage.strTitle }}</h1>
+
+    <button type="button" onclick="window.location='/pokemon/all'">ALL</button>
+    <button type="button" onclick="window.location='/pokemon/combat'">COMBAT AGAIN</button>
+
+    <div>
+      <button type="button" onclick="window.location='/pokemon/{{ aPokemons.uno.id}}'">INFO</button>
+      <img src="/assets/images/{{ '%03d' | format(aPokemons.uno.id) }}.png" alt="{{ aPokemons.uno.name }}" width="200" height="200">
+
+      <span><strong>VS</strong></span>
+
+      <img src="/assets/images/{{ '%03d' | format(aPokemons.dos.id) }}.png" alt="{{ aPokemons.dos.name }}" width="200" height="200">
+      <button type="button" onclick="window.location='/pokemon/{{ aPokemons.dos.id }}'">INFO</button>
+    </div>
+
+    <h2>Ganador: {{ aPokemons.winner }}</h2>
+  </body>
+</html>

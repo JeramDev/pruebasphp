@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+  <head>
+
+    <title>{{ aPage.strTitle }}</title>
+
+    <meta name="description" content="{{ aPage.strDescription }}">
+
+  </head>
+  <body>
+    <h1>Pokemons</h1>
+
+    {# <div>
+
+      {% for strPhrase in aPokemons.aLyrics %}
+
+        <div>
+          <span>{{ strPhrase }}</span>
+        </div>
+
+      {% endfor %}
+
+    </div> #}
+
+    <div>
+      <button type="button" onclick="window.location='/pokemon/combat'">COMBAT!!!</button>
+    </div>
+
+    </br>
+
+    <div>
+
+      {% for pPokemon in aPokemons.aData %}
+
+        <div>
+          <span>{{ pPokemon.name }}</span>
+          <span> => </span>
+          <img src="/assets/images/{{ '%03d' | format(pPokemon.id) }}.png" alt="{{ pPokemon.name }}" width="50" height="50">
+          <button type="button" onclick="window.location='/pokemon/{{ pPokemon.id }}'">INFO</button>
+        </div>
+
+      {% endfor %}
+
+    </div>
+  </body>
+</html>

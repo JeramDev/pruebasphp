@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html>
+  <head>
+
+    <title>{{ aPage.strTitle }}</title>
+
+    <meta name="description" content="{{ aPage.strDescription }}">
+
+  </head>
+  <body>
+    <h1>Pokemon</h1>
+
+    <div>
+      <button type="button" onclick="window.location='/pokemon/{{ pPokemon.id - 1 }}'">PREV</button>
+      <button type="button" onclick="window.location='/pokemon/{{ pPokemon.id + 1 }}'">NEXT</button>
+      <button type="button" onclick="window.location='/pokemon/all'">ALL</button>
+    </div>
+
+    </br>
+    
+    <div>
+      <strong style="text-transform:uppercase">{{ pPokemon.name }}</strong>
+      <div>HP: {{ pPokemon.hp }}</div>
+      <div>ATA: {{ pPokemon.attack }}</div>
+      <div>DEF: {{ pPokemon.defense }}</div>
+      <div>SPD: {{ pPokemon.speed }}</div>
+      <div>SPE: {{ pPokemon.special }}</div>
+    </div>
+
+    <div>
+      
+      <img src="/assets/images/{{ '%03d' | format(pPokemon.id) }}.png" alt="{{ pPokemon.name }}" width="600" height="600">
+    </div>
+
+  </body>
+</html>
